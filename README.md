@@ -1,2 +1,3 @@
 # SoftUni-courses
-All of my practice and experience in the software university. Homework, tasks and a lot of practical exercises.
+All of my practical experience in the software university.
+Homework, labs, exercise and more.
