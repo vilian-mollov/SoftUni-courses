@@ -37,77 +37,20 @@ public class N11ArrayManipulator {
                     break;
                 case "first":
                     if(commandSplit[2].equals("even")){
-                        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
-                            System.out.println("Invalid count");
-                        }else {
-                            int counter = 0;
-                            List<Integer> newArrayForFirstEven = new ArrayList<>();
-                            for (int i = 0; i < arrayListOfNumbers.size(); i++) {
-                                if (arrayListOfNumbers.get(i) % 2 == 0 && counter < Integer.parseInt(commandSplit[1])) {
-                                        newArrayForFirstEven.add(arrayListOfNumbers.get(i));
-                                        counter++;
-                                }
-                            }
-                            System.out.println(newArrayForFirstEven);
-                        }
+                        printEvenFirsNumber(arrayListOfNumbers, commandSplit);
                     }else{ //odd
-                        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
-                            System.out.println("Invalid count");
-                        }else {
-                            int counter = 0;
-                            List<Integer> newArrayForFirstOdd = new ArrayList<>();
-                            for (int i = 0; i < arrayListOfNumbers.size(); i++) {
-                                if (arrayListOfNumbers.get(i) % 2 != 0 && counter < Integer.parseInt(commandSplit[1])) {
-                                        newArrayForFirstOdd.add(arrayListOfNumbers.get(i));
-                                        counter++;
-                                }
-                            }
-                            System.out.println(newArrayForFirstOdd);
-                        }
+                        printOddFirstNumbers(arrayListOfNumbers, commandSplit);
                     }
                     break;
                 case "last":
                     if(commandSplit[2].equals("even")) {
 
-                        if (Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()) {
-                            System.out.println("Invalid count");
-                        }else{
-                        int counter = 0;
-                        List<Integer> newArrayForFirstEven = new ArrayList<>();
-                        for (int i = arrayListOfNumbers.size() - 1; i >= 0; i--) {
-                            if (arrayListOfNumbers.get(i) % 2 == 0 && counter < Integer.parseInt(commandSplit[1])) {
-                                    newArrayForFirstEven.add(arrayListOfNumbers.get(i));
-                                    counter++;
-                            }
-                        }
-                        List<Integer> secondArray = new ArrayList<>();
-                        for (int i = newArrayForFirstEven.size() - 1; i >= 0; i--) {
-                            secondArray.add(newArrayForFirstEven.get(i));
-                        }
-                        System.out.println(secondArray);
-                    }
+                        printLastEvenNumbers(arrayListOfNumbers, commandSplit);
 
                     }else{ //odd
-                        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
-                            System.out.println("Invalid count");
-                        }else {
-                            int counter = 0;
-                            List<Integer> newArrayForFirstOdd = new ArrayList<>();
-                            for (int i = arrayListOfNumbers.size() - 1; i >= 0; i--) {
-                                if (arrayListOfNumbers.get(i) % 2 != 0 && counter < Integer.parseInt(commandSplit[1])) {
-                                        newArrayForFirstOdd.add(arrayListOfNumbers.get(i));
-                                        counter++;
-                                }
-                            }
-                            List<Integer> secondArray = new ArrayList<>();
-                            for (int i = newArrayForFirstOdd.size() - 1; i >= 0; i--) {
-                                secondArray.add(newArrayForFirstOdd.get(i));
-                            }
-                            System.out.println(secondArray);
-                        }
+                        printLastOddNumbers(arrayListOfNumbers, commandSplit);
                     }
                     break;
-
             }
 
 
@@ -117,6 +60,78 @@ public class N11ArrayManipulator {
         System.out.println(arrayListOfNumbers);
 
 
+    }
+
+    private static void printLastOddNumbers(List<Integer> arrayListOfNumbers, String[] commandSplit) {
+        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
+            System.out.println("Invalid count");
+        }else {
+            int counter = 0;
+            List<Integer> newArrayForFirstOdd = new ArrayList<>();
+            for (int i = arrayListOfNumbers.size() - 1; i >= 0; i--) {
+                if (arrayListOfNumbers.get(i) % 2 != 0 && counter < Integer.parseInt(commandSplit[1])) {
+                        newArrayForFirstOdd.add(arrayListOfNumbers.get(i));
+                        counter++;
+                }
+            }
+            List<Integer> secondArray = new ArrayList<>();
+            for (int i = newArrayForFirstOdd.size() - 1; i >= 0; i--) {
+                secondArray.add(newArrayForFirstOdd.get(i));
+            }
+            System.out.println(secondArray);
+        }
+    }
+
+    private static void printLastEvenNumbers(List<Integer> arrayListOfNumbers, String[] commandSplit) {
+        if (Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()) {
+            System.out.println("Invalid count");
+        }else{
+        int counter = 0;
+        List<Integer> newArrayForFirstEven = new ArrayList<>();
+        for (int i = arrayListOfNumbers.size() - 1; i >= 0; i--) {
+            if (arrayListOfNumbers.get(i) % 2 == 0 && counter < Integer.parseInt(commandSplit[1])) {
+                    newArrayForFirstEven.add(arrayListOfNumbers.get(i));
+                    counter++;
+            }
+        }
+        List<Integer> secondArray = new ArrayList<>();
+        for (int i = newArrayForFirstEven.size() - 1; i >= 0; i--) {
+            secondArray.add(newArrayForFirstEven.get(i));
+        }
+        System.out.println(secondArray);
+    }
+    }
+
+    private static void printOddFirstNumbers(List<Integer> arrayListOfNumbers, String[] commandSplit) {
+        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
+            System.out.println("Invalid count");
+        }else {
+            int counter = 0;
+            List<Integer> newArrayForFirstOdd = new ArrayList<>();
+            for (int i = 0; i < arrayListOfNumbers.size(); i++) {
+                if (arrayListOfNumbers.get(i) % 2 != 0 && counter < Integer.parseInt(commandSplit[1])) {
+                        newArrayForFirstOdd.add(arrayListOfNumbers.get(i));
+                        counter++;
+                }
+            }
+            System.out.println(newArrayForFirstOdd);
+        }
+    }
+
+    private static void printEvenFirsNumber(List<Integer> arrayListOfNumbers, String[] commandSplit) {
+        if(Integer.parseInt(commandSplit[1]) > arrayListOfNumbers.size()){
+            System.out.println("Invalid count");
+        }else {
+            int counter = 0;
+            List<Integer> newArrayForFirstEven = new ArrayList<>();
+            for (int i = 0; i < arrayListOfNumbers.size(); i++) {
+                if (arrayListOfNumbers.get(i) % 2 == 0 && counter < Integer.parseInt(commandSplit[1])) {
+                        newArrayForFirstEven.add(arrayListOfNumbers.get(i));
+                        counter++;
+                }
+            }
+            System.out.println(newArrayForFirstEven);
+        }
     }
 
 
