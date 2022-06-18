@@ -3,7 +3,7 @@ package AssociativeArraysLambdaAndStreamAPI;
 import java.text.DecimalFormat;
 import java.util.*;
 
-public class N1 {
+public class N1CountRealNumbers {
     public static void main(String[] args) {
 Scanner scanner = new Scanner(System.in);
         Map<Double , Integer> myMap = new TreeMap<>();
