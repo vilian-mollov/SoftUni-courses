@@ -10,12 +10,9 @@ public class N1CompareMatrices {
 
        // printMatrix(firstMatrix);
        // printMatrix(secondMatrix);
-       boolean isEqual = compareMatrixes(firstMatrix,secondMatrix);
-       if(isEqual){
-           System.out.println("equal");
-       }else{
-           System.out.println("not equal");
-       }
+       boolean isEqual = compareMatrices(firstMatrix,secondMatrix);
+       String output = isEqual ? "equal":"not equal";
+        System.out.println(output);
 
     }
     public static int[][] readMatrix(Scanner scanner){
@@ -49,7 +46,7 @@ public class N1CompareMatrices {
 
 
     }
-    public static boolean compareMatrixes(int[][] firstMatrix, int[][] secondMatrix){
+    public static boolean compareMatrices(int[][] firstMatrix, int[][] secondMatrix){
         if(firstMatrix.length != secondMatrix.length){
             return false;
         }
