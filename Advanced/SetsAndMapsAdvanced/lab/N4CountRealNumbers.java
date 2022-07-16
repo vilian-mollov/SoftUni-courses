@@ -13,15 +13,12 @@ public class N4CountRealNumbers {
         Arrays.stream(scanner.nextLine().split("\\s+"))
                 .mapToDouble(Double::parseDouble)
                 .forEach(key -> {
-
-                    if (myMap.containsKey(key)) {
-                        int oldCount = myMap.get(key);
-                        int newCount = oldCount + 1;
-                        myMap.put(key, newCount);
-                    } else {
-                        myMap.put(key, 1);
+                    Integer oldValue = myMap.get(key);
+                    int newValue = 1;
+                    if(oldValue != null){
+                        newValue +=oldValue;
                     }
-
+                    myMap.put(key,newValue);
                 });
         for (var entry : myMap.entrySet()) {
             System.out.println(String.format("%.1f -> %d", entry.getKey(), entry.getValue()));
