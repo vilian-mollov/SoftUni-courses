@@ -13,12 +13,12 @@ public class N3CountUppercaseWords {
 
         Predicate<String> findUpperCaseWords = word -> !word.equals(word.toLowerCase());
 
-        List<String> words = Arrays.stream(text.split("\\s+"))
+        List<String> UpperCaseWords = Arrays.stream(text.split("\\s+"))
                 .filter(findUpperCaseWords)
                 .collect(Collectors.toList());
 
-        System.out.println(words.size());
-        words.stream().forEach(System.out::println);
+        System.out.println(UpperCaseWords.size());
+        UpperCaseWords.stream().forEach(System.out::println);
 
 
     }
