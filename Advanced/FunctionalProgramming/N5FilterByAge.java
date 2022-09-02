@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class N5FilterByAge {
 
@@ -38,20 +39,10 @@ public class N5FilterByAge {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
 
-        List<Person> people = new ArrayList<>();
+        List<Person> people = IntStream.range(0,n)
+                .mapToObj(i -> readPerson(scanner))
+                .collect(Collectors.toList());
 
-
-        while (n-- > 0) {
-            String[] data = scanner.nextLine().split(", ");
-
-            String name = data[0];
-            int age = Integer.parseInt(data[1]);
-
-            Person person = new Person(name, age);
-
-            people.add(person);
-
-        }
 
         String condition = scanner.nextLine();
         int ageFilter = Integer.parseInt(scanner.nextLine());
@@ -64,6 +55,15 @@ public class N5FilterByAge {
         people.forEach(printer);
 
 
+    }
+
+    private static Person readPerson(Scanner scanner) {
+        String[] data = scanner.nextLine().split(", ");
+
+        String name = data[0];
+        int age = Integer.parseInt(data[1]);
+
+        return new Person(name, age);
     }
 
     private static Consumer<Person> getPrinter(String outputPrintFormat) {
