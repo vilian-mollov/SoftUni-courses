@@ -39,7 +39,9 @@ public class N2BasicStackOperations {
                 }
                 if (smallestElement > stack.peek()) {
                     smallestElement = stack.pop();
+               continue;
                 }
+                stack.pop();
 
             }
             System.out.println(smallestElement);
