@@ -32,7 +32,7 @@ public class N2BasicStackOperations {
         }else if(stack.isEmpty()){
             System.out.println(0);
         }else{
-            for (int i = 0; i < stack.size(); i++) {
+            while (!stack.isEmpty()) {
                 if (elementToCheck == stack.peek()) {
                     isFound = true;
                     break;
