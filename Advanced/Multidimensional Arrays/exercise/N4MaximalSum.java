@@ -50,7 +50,7 @@ public class N4MaximalSum {
 
         }
 
-        System.out.println(sumOfBestMatrix);
+        System.out.println("Sum = " + sumOfBestMatrix);
 
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
