@@ -8,16 +8,16 @@ public class RhombusOfStars {
 
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
-        int count = n;
+        int whiteSpace = n;
 
         for (int i = 1; i <= n; i++) {          //printing the upper part of the rhombus
-            printingUpperPart(count, i);
-            count--;
+            printingUpperPart(whiteSpace, i);
+            whiteSpace--;
         }
 
         for (int i = n - 1; i >= 1; i--) {      //printing the lower part of the rhombus
-            count++;
-            printingLowerPart(count, i);
+            whiteSpace++;
+            printingLowerPart(whiteSpace, i);
         }
 
     }
