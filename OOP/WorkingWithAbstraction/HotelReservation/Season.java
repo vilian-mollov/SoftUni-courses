@@ -6,7 +6,7 @@ public enum Season {
  WINTER(3),
  SUMMER(4);
 
- private int multiplier;
+ private final int multiplier;
 
  Season(int multiplier) {
   this.multiplier = multiplier;

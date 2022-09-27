@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //todo add to git hub HotelReservation
 
         Scanner scanner = new Scanner(System.in);
         String[] data = scanner.nextLine().split("\\s+");

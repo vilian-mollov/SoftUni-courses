@@ -5,7 +5,7 @@ public enum DiscountType {
     SECOND_VISIT(0.90),
     NONE(1);
 
-    private double priceReductionFactor;
+    private final double priceReductionFactor;
 
     DiscountType(double priceReductionFactor) {
         this.priceReductionFactor = priceReductionFactor;
