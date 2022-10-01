@@ -34,7 +34,6 @@ public class Box {
     }
 
     public double calculateSurfaceArea() {
-        //return Math.sqrt(length) + Math.sqrt(width) * height;
         return calculateLateralSurfaceArea() + 2 * length * width;
     }
 
