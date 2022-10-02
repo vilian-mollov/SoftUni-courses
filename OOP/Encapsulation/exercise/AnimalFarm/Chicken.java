@@ -11,7 +11,7 @@ public class Chicken {
     }
 
     private void setName(String name) {
-        if (name.length() <= 1 && name.charAt(0) != ' ') {
+        if (name == null || name.trim().isEmpty() || name.length() <= 1) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
         this.name = name;
