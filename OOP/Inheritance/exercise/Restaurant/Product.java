@@ -12,9 +12,11 @@ public class Product {
         setPrice(price);
     }
 
-    private void setPrice(BigDecimal price) {
-        if(price == null){
-            throw new IllegalArgumentException("price cant be null.");
+    protected void setPrice(BigDecimal price) {
+        if (price == null) {
+            throw new IllegalArgumentException("price can't be null.");
+        } else if (price.compareTo(new BigDecimal("0")) <= 0) {
+            throw new IllegalArgumentException("price can't be zero or negative.");
         }
         this.price = price;
     }

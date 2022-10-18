@@ -11,7 +11,7 @@ public class Food extends Product {
         setGrams(grams);
     }
 
-    public void setGrams(double grams) {
+    protected void setGrams(double grams) {
         if (grams <= 0) {
             throw new IllegalArgumentException("Grams can't be zero or negative.");
         }
