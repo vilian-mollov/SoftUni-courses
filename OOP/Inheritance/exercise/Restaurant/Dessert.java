@@ -11,7 +11,7 @@ public class Dessert extends Food {
         setCalories(calories);
     }
 
-    private void setCalories(double calories) {
+    protected void setCalories(double calories) {
         if(calories <= 0){
             throw new IllegalArgumentException("Calories can't be zero or negative.");
         }

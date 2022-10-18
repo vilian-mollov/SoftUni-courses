@@ -11,7 +11,7 @@ public class Salmon extends MainDish {
     }
 
     @Override
-    public void setGrams(double grams) {
+    protected void setGrams(double grams) {
         super.setGrams(grams);
         if (grams < 22.00) {
             this.grams = SALMON_GRAMS;
