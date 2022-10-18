@@ -6,7 +6,7 @@ public class Coffee extends HotBeverage {
 
     private final static double COFFEE_MILLILITERS = 50.00;
     private final static BigDecimal COFFEE_PRICE = new BigDecimal("3.50");
-    double caffeine;
+    private double caffeine;
 
     public Coffee(String name, BigDecimal price, double milliliters) {
         super(name, price, milliliters);
@@ -26,6 +26,10 @@ public class Coffee extends HotBeverage {
         if (this.price.compareTo(COFFEE_PRICE) < 0) {
             this.price = COFFEE_PRICE;
         }
+    }
+
+    public void setCaffeine(double caffeine) {
+        this.caffeine = caffeine;
     }
 
     public double getCaffeine() {
