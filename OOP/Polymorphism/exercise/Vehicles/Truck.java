@@ -3,11 +3,13 @@ package Polymorphism.exercise.Vehicles;
 public class Truck extends Vehicle {
 
     private static final double TRUCK_BONUS_EXPENSES = 0.5;
+
     public Truck(Double fuelQuantity, Double littersPerKilometer, Season season) {
         MAXIMUM_FUEL_CAPACITY = 250.00;
         setSeason(season);
         setFuelQuantity(fuelQuantity);
-        this.littersPerKilometer = littersPerKilometer;
+        setLittersPerKilometer(littersPerKilometer);
+        this.littersPerKilometer += TRUCK_BONUS_EXPENSES;
     }
 
 
@@ -36,13 +38,6 @@ public class Truck extends Vehicle {
             fuelQuantity += amount;
             return "Fuel added to truck tank: " + df.format(amount);
         }
-    }
-
-   @Override
-    public void setLittersPerKilometer(Double littersPerKilometer) {
-        validate(littersPerKilometer);
-
-        this.littersPerKilometer = littersPerKilometer + season.fuelConsumptionIncrease + TRUCK_BONUS_EXPENSES;
     }
 
     @Override
