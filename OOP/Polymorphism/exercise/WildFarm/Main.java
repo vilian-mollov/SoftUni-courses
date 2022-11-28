@@ -12,15 +12,15 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String animalInfo = reader.readLine();
-        String animalFoodInfo;
+        String foodInfo;
 
-        List<Animal> farm = new ArrayList<>();
+        List<Animal> farmList = new ArrayList<>();
 
         while (!animalInfo.equals("End")) {
 
-            animalFoodInfo = reader.readLine();
+            foodInfo = reader.readLine();
 
-            String[] animalFoodAndQuantitySeparated = animalFoodInfo.split("\\s+");
+            String[] animalFoodAndQuantitySeparated = foodInfo.split("\\s+");
             Food food = setFood(animalFoodAndQuantitySeparated);
 
             String[] animalDataSeparated = animalInfo.split("\\s+");
@@ -34,13 +34,13 @@ public class Main {
             String eating = animal.eatFood(food);
             System.out.println(eating);
 
-            farm.add(animal);
+            farmList.add(animal);
 
             animalInfo = reader.readLine();
         }
 
 
-        for (Animal animal : farm) {
+        for (Animal animal : farmList) {
             System.out.println(animal);
         }
 
