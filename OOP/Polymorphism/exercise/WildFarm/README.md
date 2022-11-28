@@ -1,4 +1,4 @@
-#Wild Farm problem 
+# Wild Farm problem 
 
 Your task is to create a class hierarchy like the picture below. All the classes except Vegetable, Meat, Mouse, Tiger, Cat & Zebra should be abstract.
 Input should be read from the console. Every Odd line will contain information about the Animal in following format:
