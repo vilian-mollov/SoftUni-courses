@@ -28,10 +28,9 @@ public class CommandImpl implements CommandInterface {
     class PasteTransform implements TextTransform{
         @Override
         public void invokeOn(StringBuilder text, int startIndex, int endIndex) {
-            text.deleteCharAt(startIndex);
-            text.insert(startIndex,cut);
-
+            text.replace(startIndex,endIndex,cut.toString());
         }
+
     }
     private static StringBuilder cut;
     private Map<String, TextTransform> commandTransforms;
