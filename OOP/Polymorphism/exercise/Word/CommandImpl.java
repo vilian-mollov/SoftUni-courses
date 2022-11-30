@@ -14,11 +14,32 @@ public class CommandImpl implements CommandInterface {
             }
         }
     }
+    class CutTransform implements TextTransform{
+        @Override
+        public void invokeOn(StringBuilder text, int startIndex, int endIndex) {
+            StringBuilder cut = new StringBuilder();
+            for (int i = startIndex; i < endIndex; i++) {
+                cut.append(text.charAt(i));
+            }
+            text.delete(startIndex,endIndex);
+            CommandImpl.cut = cut;
+        }
+    }
+    class PasteTransform implements TextTransform{
+        @Override
+        public void invokeOn(StringBuilder text, int startIndex, int endIndex) {
+            text.deleteCharAt(startIndex);
+            text.insert(startIndex,cut);
+
+        }
+    }
+    private static StringBuilder cut;
     private Map<String, TextTransform> commandTransforms;
     private StringBuilder text;
 
     public CommandImpl(StringBuilder text) {
         this.commandTransforms = new HashMap<>();
+        this.init();
         this.text = text;
     }
 
@@ -44,6 +65,8 @@ public class CommandImpl implements CommandInterface {
     protected List<Command> initCommands() {
         List<Command> commands = new ArrayList<>();
         commands.add(new Command("uppercase", new ToUpperTransform()));
+        commands.add(new Command("cut",new CutTransform()));
+        commands.add(new Command("paste",new PasteTransform()));
 
         return commands;
     }
