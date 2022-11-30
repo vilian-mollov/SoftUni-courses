@@ -19,7 +19,7 @@ The skeleton you are provided with contains the following files:
   
 The code uses an Initialization.java file, which is missing but should define a way to generate a CommandInterface.  
 The files you are given support all logic necessary to implement the following command:  
-uppercase – transforms any alphabetical character in the text in the range [startIndex, endIndex) to its uppercase variant  
+- uppercase – transforms any alphabetical character in the text in the range [startIndex, endIndex) to its uppercase variant  
 E.g. if the current text is som3. text   
 and we are given the command uppercase 1 7  
 the current text will change to sOM3. Text  
