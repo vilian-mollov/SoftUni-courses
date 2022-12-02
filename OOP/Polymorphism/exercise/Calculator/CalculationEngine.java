@@ -29,9 +29,9 @@ public class CalculationEngine {
     }
 
     void pushOperation(Operation operation) {
-//        if(operation == null){
-//            return;
-//        }
+        if(operation == null){
+            return;
+        }
         if(operation instanceof MemoryRecall){
             this.pushNumber(memory.pop());
             return;
