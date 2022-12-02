@@ -1,12 +1,17 @@
 package Polymorphism.exercise.Calculator;
 
+import java.util.ArrayDeque;
+
 public class CalculationEngine {
     private int result;
     private Operation currentOperation;
 
+    private ArrayDeque<Integer> memory;
+
     public CalculationEngine(){
         this.result = 0;
         this.currentOperation = null;
+        memory = new ArrayDeque<>();
     }
 
    public void pushNumber(int number) {
@@ -15,6 +20,7 @@ public class CalculationEngine {
 
             if (currentOperation.isCompleted()) {
                 this.result = currentOperation.getResult();
+                addToMemoryIfMemorySaveOperation();
                 this.currentOperation = null;
             }
         } else {
@@ -26,6 +32,11 @@ public class CalculationEngine {
 //        if(operation == null){
 //            return;
 //        }
+        if(operation instanceof MemoryRecall){
+            this.pushNumber(memory.pop());
+            return;
+        }
+
         if (operation.isCompleted()) {
             this.pushNumber(operation.getResult());
         } else {
@@ -36,5 +47,11 @@ public class CalculationEngine {
 
     int getCurrentResult() {
         return this.result;
+    }
+
+    private void addToMemoryIfMemorySaveOperation() {
+        if(currentOperation instanceof MemorySaveOperation){
+            memory.push(currentOperation.getResult());
+        }
     }
 }
