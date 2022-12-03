@@ -1,5 +1,6 @@
 package SOLID.exercise;
 
+import SOLID.exercise.interfaces.Calculator;
 import SOLID.exercise.interfaces.Product;
 import SOLID.exercise.products.Chips;
 import SOLID.exercise.products.Chocolate;
@@ -8,11 +9,7 @@ import SOLID.exercise.products.Lemonade;
 
 import java.util.List;
 
-public class CalorieCalculator {
-
-    public CalorieCalculator() {
-    }
-
+public class CalorieCalculator implements Calculator {
     public double sum(List<Product> products) {
         double sum = 0;
 

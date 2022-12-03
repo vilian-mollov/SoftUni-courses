@@ -1,8 +1,9 @@
 package SOLID.exercise.products;
 
+import SOLID.exercise.interfaces.Food;
 import SOLID.exercise.interfaces.Product;
 
-public class Chocolate implements Product {
+public class Chocolate implements Product, Food {
 
     public static final double CALORIES_PER_100_GRAMS = 575.0;
 
@@ -19,5 +20,10 @@ public class Chocolate implements Product {
     @Override
     public double findCalories() {
         return (CALORIES_PER_100_GRAMS / 100) * grams;
+    }
+
+    @Override
+    public double findKilograms() {
+        return grams / 1000;
     }
 }

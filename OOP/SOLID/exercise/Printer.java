@@ -1,5 +1,6 @@
 package SOLID.exercise;
 
+import SOLID.exercise.interfaces.Calculator;
 import SOLID.exercise.interfaces.Product;
 
 import java.util.List;
@@ -11,11 +12,12 @@ public class Printer {
     private static final String AVERAGE = "Average: %.2f";
 
 
-    public void printSum(List<Product> products, CalorieCalculator calorieCalculator) {
-        System.out.printf((SUM) + "%n", calorieCalculator.sum(products));
+    public void printSum(List<Product> products, Calculator calculator) {
+        System.out.printf((SUM) + "%n", calculator.sum(products));
     }
 
-    public void printAverage(List<Product> products,CalorieCalculator calorieCalculator) {
-        System.out.printf((AVERAGE) + "%n", calorieCalculator.average(products));
+    public void printAverage(List<Product> products, Calculator calculator) {
+        System.out.printf((AVERAGE) + "%n", calculator.average(products));
     }
+
 }
