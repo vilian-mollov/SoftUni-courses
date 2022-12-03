@@ -2,13 +2,12 @@ package SOLID.exercise.products;
 
 import SOLID.exercise.interfaces.Product;
 
-public class Chocolate implements Product {
+public class Chips implements Product {
 
-    public static final double CALORIES_PER_100_GRAMS = 575.0;
+    public static final double CALORIES_PER_100_GRAMS = 529.0;
+    private final double grams;
 
-    private double grams;
-
-    public Chocolate(double grams) {
+    public Chips(double grams) {
         this.grams = grams;
     }
 

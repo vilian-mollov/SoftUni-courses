@@ -1,19 +1,21 @@
 package SOLID.exercise;
 
+import SOLID.exercise.interfaces.Product;
+
 import java.util.List;
 
 public class Printer {
 
 
-    private static final String SUM = "Sum: %f";
-    private static final String AVERAGE = "Average: %f";
+    private static final String SUM = "Sum: %.2f";
+    private static final String AVERAGE = "Average: %.2f";
 
 
-    public void printSum(List<Object> products, CalorieCalculator calorieCalculator) {
+    public void printSum(List<Product> products, CalorieCalculator calorieCalculator) {
         System.out.printf((SUM) + "%n", calorieCalculator.sum(products));
     }
 
-    public void printAverage(List<Object> products,CalorieCalculator calorieCalculator) {
+    public void printAverage(List<Product> products,CalorieCalculator calorieCalculator) {
         System.out.printf((AVERAGE) + "%n", calorieCalculator.average(products));
     }
 }

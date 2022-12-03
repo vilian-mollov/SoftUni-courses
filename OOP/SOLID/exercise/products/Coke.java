@@ -1,6 +1,8 @@
 package SOLID.exercise.products;
 
-public class Coke {
+import SOLID.exercise.interfaces.Product;
+
+public class Coke implements Product {
 
     public static final double CALORIES_PER_100_GRAMS = 44.0;
     public static final double DENSITY = 0.6;
@@ -13,5 +15,10 @@ public class Coke {
 
     public double getMilliliters() {
         return milliliters;
+    }
+
+    @Override
+    public double findCalories() {
+        return (CALORIES_PER_100_GRAMS / 100) * (milliliters * DENSITY);
     }
 }

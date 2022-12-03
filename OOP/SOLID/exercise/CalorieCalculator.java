@@ -1,5 +1,7 @@
 package SOLID.exercise;
 
+import SOLID.exercise.interfaces.Product;
+import SOLID.exercise.products.Chips;
 import SOLID.exercise.products.Chocolate;
 import SOLID.exercise.products.Coke;
 import SOLID.exercise.products.Lemonade;
@@ -11,29 +13,34 @@ public class CalorieCalculator {
     public CalorieCalculator() {
     }
 
-    public double sum(List<Object> products) {
+    public double sum(List<Product> products) {
         double sum = 0;
 
-        for (Object product : products) {
+        for (Product product : products) {
             if (product instanceof Coke) {
                 double grams = ((Coke) product).getMilliliters() * Coke.DENSITY;
-                sum += (Coke.CALORIES_PER_100_GRAMS / 100) * grams;
+                sum += product.findCalories();
             }
 
             if (product instanceof Lemonade) {
                 double grams = ((Lemonade) product).getMilliliters() * Lemonade.DENSITY;
-                sum += (Lemonade.CALORIES_PER_100_GRAMS / 100) * grams;
+                sum += product.findCalories();
             }
 
             if (product instanceof Chocolate) {
-                sum += (Chocolate.CALORIES_PER_100_GRAMS / 100) * ((Chocolate) product).getGrams();
+                sum += product.findCalories();
             }
+
+            if(product instanceof Chips){
+                sum += product.findCalories();
+            }
+
         }
 
         return sum;
     }
 
-    public double average(List<Object> products) {
+    public double average(List<Product> products) {
         return sum(products) / products.size();
     }
 
