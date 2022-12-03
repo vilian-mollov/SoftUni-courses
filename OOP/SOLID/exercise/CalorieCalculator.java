@@ -8,9 +8,6 @@ import java.util.List;
 
 public class CalorieCalculator {
 
-    private static final String SUM = "Sum: %f";
-    private static final String AVERAGE = "Average: %f";
-
     public CalorieCalculator() {
     }
 
@@ -40,11 +37,5 @@ public class CalorieCalculator {
         return sum(products) / products.size();
     }
 
-    public void printSum(List<Object> products) {
-        System.out.printf((SUM) + "%n", sum(products));
-    }
 
-    public void printAverage(List<Object> products) {
-        System.out.printf((AVERAGE) + "%n", average(products));
-    }
 }
