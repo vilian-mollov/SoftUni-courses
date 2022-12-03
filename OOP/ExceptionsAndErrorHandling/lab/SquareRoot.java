@@ -11,7 +11,7 @@ public class SquareRoot {
             double n = Double.parseDouble(scanner.nextLine());
 
             if (n < 0) {
-                throw new NumberFormatException("Invalid");
+                throw new NumberFormatException();
             }
 
             double squareRoot = Math.sqrt(n);
