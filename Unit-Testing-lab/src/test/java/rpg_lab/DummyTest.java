@@ -27,7 +27,7 @@ public class DummyTest {
     public void test_Dummy_LosesHealth_WhenAttacked() {
         aliveDummy.takeAttack(ATTACK_POINTS);
 
-        assertEquals(ALIVE_HEALTH - ATTACK_POINTS, aliveDummy.getHealth());
+        assertEquals("Wrong dummy health",ALIVE_HEALTH - ATTACK_POINTS, aliveDummy.getHealth());
 
     }
 
@@ -41,7 +41,7 @@ public class DummyTest {
     @Test
     public void test_DeadDummy_GivesExperience() {
         int actual = deadDummy.giveExperience();
-        assertEquals(EXPERIENCE, actual);
+        assertEquals("Wrong experience from dead dummy",EXPERIENCE, actual);
     }
 
 
@@ -52,12 +52,12 @@ public class DummyTest {
 
     @Test
     public void test_AliveDummy_IsAlive() {
-        assertFalse(aliveDummy.isDead());
+        assertFalse("Alive dummy return dead",aliveDummy.isDead());
     }
 
     @Test
     public void test_DeadDummy_IsDead() {
-        assertTrue(deadDummy.isDead());
+        assertTrue("Dead dummy return alive",deadDummy.isDead());
     }
 
 
