@@ -42,17 +42,36 @@ public class DatabaseTest {
     }
 
     @Test
+    public void test_Add_ValidCase()throws OperationNotSupportedException{
+        Person person = new Person(741,"Pesho");
+        database.add(person);
+        int lastPersonIndex = database.getElements().length-1;
+        assertEquals(person,database.getElements()[lastPersonIndex]);
+    }
+
+    @Test(expected = OperationNotSupportedException.class)
+    public void test_Add_When_Null_Parameter_Is_Presented_Throws_O_N_S_Exception()throws OperationNotSupportedException{
+        database.add(null);
+    }
+    @Test
+    public void test_Add_When_ThereAre_MultipleUsers_With_TheSame_Id_Throws_O_N_S_Exception()throws OperationNotSupportedException{
+
+    }
+
+    @Test
     public void test_Database_FindByUserName_ValidCase() throws OperationNotSupportedException {
-        Person actualPerson = database.findByUsername("Jakarcho");
+        Person actualPerson = database.findByUsername(person2.getUsername());
         assertEquals(person2,actualPerson);
     }
 
-    @Test
-    public void test_Database_FindByUserName_When_NoUser_Is_Presented_ThrowsException_O_N_S_Exception() {
+    @Test(expected = OperationNotSupportedException.class)
+    public void test_Database_FindByUserName_When_NoUser_Is_Presented_ThrowsException_O_N_S_Exception()throws OperationNotSupportedException {
+        Person actualPerson = database.findByUsername("Dany");
     }
 
-    @Test
-    public void test_Database_FindByUserName_When_UsernameParameter_Is_Null_ThrowsException_O_N_S_Exception() {
+    @Test(expected = OperationNotSupportedException.class)
+    public void test_Database_FindByUserName_When_UsernameParameter_Is_Null_ThrowsException_O_N_S_Exception()throws OperationNotSupportedException {
+        Person actualPerson = database.findByUsername(null);
     }
 
     @Test
