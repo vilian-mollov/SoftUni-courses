@@ -21,6 +21,16 @@ public class Database {
         if (person == null) {
             throw new OperationNotSupportedException();
         }
+       boolean hasSameUser = false;
+        for (int i = 0; i < elementsCount; i++) {
+            if(person.getId() == elements[i].getId()){
+                hasSameUser = true;
+            }
+        }
+
+        if(hasSameUser){
+            throw new OperationNotSupportedException();
+        }
 
         this.elements[++index] = person;
         this.elementsCount++;

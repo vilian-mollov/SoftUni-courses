@@ -53,9 +53,10 @@ public class DatabaseTest {
     public void test_Add_When_Null_Parameter_Is_Presented_Throws_O_N_S_Exception()throws OperationNotSupportedException{
         database.add(null);
     }
-    @Test
+    @Test(expected = OperationNotSupportedException.class)
     public void test_Add_When_ThereAre_MultipleUsers_With_TheSame_Id_Throws_O_N_S_Exception()throws OperationNotSupportedException{
-
+        Person javcho = new Person(person1.getId(), "Javcho");
+        database.add(javcho);
     }
 
     @Test
@@ -72,6 +73,11 @@ public class DatabaseTest {
     @Test(expected = OperationNotSupportedException.class)
     public void test_Database_FindByUserName_When_UsernameParameter_Is_Null_ThrowsException_O_N_S_Exception()throws OperationNotSupportedException {
         Person actualPerson = database.findByUsername(null);
+    }
+
+    @Test(expected = OperationNotSupportedException.class)
+    public void test_Database_FindByUserName_When_Arguments_AreAllCaseSensitive()throws OperationNotSupportedException {
+        Person actualPerson = database.findByUsername("JaKaRcHo");
     }
 
     @Test
