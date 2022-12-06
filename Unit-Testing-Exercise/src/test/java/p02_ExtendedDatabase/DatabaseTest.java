@@ -55,8 +55,8 @@ public class DatabaseTest {
     }
     @Test(expected = OperationNotSupportedException.class)
     public void test_Add_When_ThereAre_MultipleUsers_With_TheSame_Id_Throws_O_N_S_Exception()throws OperationNotSupportedException{
-        Person javcho = new Person(person1.getId(), "Javcho");
-        database.add(javcho);
+        Person person = new Person(person1.getId(), "Javcho");
+        database.add(person);
     }
 
     @Test
