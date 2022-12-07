@@ -100,5 +100,41 @@ public class CustomLinkedListTest {
         assertEquals(-1,actualNumber);
     }
 
+    @Test
+    public void test_IndexOf_ValidCase_Return_FirstTime_EncounterOf_The_SearchedElement_In_The_List(){
+        customLinkedList.add(7);  /** Integer 7 at index 4 **/
+        int actualIndex = customLinkedList.indexOf(num2); /** this is Integer 7 at index 2 **/
+        assertEquals(2,actualIndex); /** should return first encountered Integer value of 7 **/
+    }
 
+    @Test
+    public void test_IndexOf_Where_NoSuchElementExists_In_The_List_ShouldReturn_MinusOne(){
+       int actualIndex = customLinkedList.indexOf(7589);
+       assertEquals(-1,actualIndex);
+    }
+
+    @Test
+    public void test_IndexOf_Where_NullElement_AsArgument_ShouldReturn_MinusOne(){
+        int actualIndex = customLinkedList.indexOf(null);
+        assertEquals(-1,actualIndex);
+    }
+
+    @Test
+    public void test_Contains_ValidCase_ShouldReturn_True_Where_Found(){
+        boolean found = customLinkedList.contains(7);
+        assertTrue(found);
+    }
+
+    @Test
+    public void test_Contains_Null_ShouldReturn_False_Where_NotFound(){
+        boolean found = customLinkedList.contains(null);
+        assertFalse(found);
+    }
+
+    @Test
+    public void test_Contains_Where_NoSuchElementExists_In_The_List_ShouldReturn_False(){
+        boolean found = customLinkedList.contains(0);
+        assertFalse(found);
+    }
+    
 }
