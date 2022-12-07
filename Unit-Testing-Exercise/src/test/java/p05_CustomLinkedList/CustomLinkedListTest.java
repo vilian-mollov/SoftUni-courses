@@ -136,5 +136,5 @@ public class CustomLinkedListTest {
         boolean found = customLinkedList.contains(0);
         assertFalse(found);
     }
-    
+
 }
