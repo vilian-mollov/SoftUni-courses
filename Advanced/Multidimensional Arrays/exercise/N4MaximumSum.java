@@ -20,7 +20,7 @@ public class N4MaximumSum {
         for (int r = 0; r < row; r++) {
             for (int c = 0; c < col; c++) {
 
-                if (validation(row, col, r, c)) continue;
+                if (!validation(row, col, r, c)) continue;
 
                 int currentSum = 0;
 
@@ -63,18 +63,18 @@ public class N4MaximumSum {
 
     private static boolean validation(int row, int col, int r, int c) {
         if (c - 1 < 0) {
-            return true;
+            return false;
         }
         if (c + 1 >= col) {
-            return true;
+            return false;
         }
         if (r - 1 < 0) {
-            return true;
+            return false;
         }
         if (r + 1 >= row) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     private static int getCurrentSum(int[][] matrix, int r, int c, int currentSum) {
