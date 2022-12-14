@@ -5,11 +5,9 @@ import java.util.stream.Collectors;
 
 public class ClimbThePeaks {
 
-    private static ArrayDeque<Integer> food;
-    private static ArrayDeque<Integer> stamina;
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         boolean viuhren = false;
         boolean kutelo = false;
         boolean banskiSuhodol = false;
@@ -17,10 +15,10 @@ public class ClimbThePeaks {
         boolean kamenitza = false;
 
 
-        food = new ArrayDeque<>();
+        ArrayDeque<Integer> food = new ArrayDeque<>();
         Arrays.stream(scanner.nextLine().split(", ")).map(Integer::parseInt).forEach(food::push);
 
-        stamina = Arrays.stream(scanner.nextLine().split(", "))
+        ArrayDeque<Integer> stamina = Arrays.stream(scanner.nextLine().split(", "))
                 .map(Integer::parseInt).collect(Collectors.toCollection(ArrayDeque::new));
         List<String> mountains = new ArrayList<>();
 
@@ -79,19 +77,17 @@ public class ClimbThePeaks {
                 }
                 continue;
             }
-            if (!kamenitza) {
-                if (theSum >= 70) {
-                    kamenitza = true;
-                    food.pop();
-                    stamina.poll();
-                    mountains.add("Kamenitza");
-                } else {
-                    food.pop();
-                    stamina.poll();
-                }
+            if (theSum >= 70) {
+                kamenitza = true;
+                food.pop();
+                stamina.poll();
+                mountains.add("Kamenitza");
+            } else {
+                food.pop();
+                stamina.poll();
             }
 
-            if (viuhren && kutelo && banskiSuhodol && polezhan && kamenitza) {
+            if (kamenitza) {
                 break;
             }
         }
