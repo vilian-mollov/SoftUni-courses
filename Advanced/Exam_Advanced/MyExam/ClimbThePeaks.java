@@ -8,12 +8,17 @@ public class ClimbThePeaks {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        boolean viuhren = false;
-        boolean kutelo = false;
-        boolean banskiSuhodol = false;
-        boolean polezhan = false;
-        boolean kamenitza = false;
-
+        ArrayDeque<String[]> mou = new ArrayDeque<>();
+       String[] viuhren = {"Viuhren","80"};
+       String[] kutelo = {"Kutelo","90"};
+       String[] banskiSuhodol = {"Banski Suhodol","100"};
+       String[] polezhan = {"Polezhan","60"};
+       String[] kamenitza = {"Kamenitza","70"};
+        mou.offer(viuhren);
+        mou.offer(kutelo);
+        mou.offer(banskiSuhodol);
+        mou.offer(polezhan);
+        mou.offer(kamenitza);
 
         ArrayDeque<Integer> food = new ArrayDeque<>();
         Arrays.stream(scanner.nextLine().split(", ")).map(Integer::parseInt).forEach(food::push);
@@ -26,68 +31,17 @@ public class ClimbThePeaks {
         while (!food.isEmpty() && !stamina.isEmpty()) {
 
             int theSum = food.peek() + stamina.peek();
+            assert mou.peek() != null;
+            int mountainHigh = Integer.parseInt(mou.peek()[1]);
+            String theMountain = mou.peek()[0];
 
-            if (!viuhren) {
-                if (theSum >= 80) {
-                    viuhren = true;
-                    food.pop();
-                    stamina.poll();
-                    mountains.add("Vihren");
-                } else {
-                    food.pop();
-                    stamina.poll();
-
-                }
-                continue;
+            if(theSum >= mountainHigh){
+                mountains.add(theMountain);
+                mou.poll();
             }
-            if (!kutelo) {
-                if (theSum >= 90) {
-                    kutelo = true;
-                    food.pop();
-                    stamina.poll();
-                    mountains.add("Kutelo");
-
-                } else {
-                    food.pop();
-                    stamina.poll();
-                }
-                continue;
-            }
-            if (!banskiSuhodol) {
-                if (theSum >= 100) {
-                    banskiSuhodol = true;
-                    food.pop();
-                    stamina.poll();
-                    mountains.add("Banski Suhodol");
-                } else {
-                    food.pop();
-                    stamina.poll();
-                }
-                continue;
-            }
-            if (!polezhan) {
-                if (theSum >= 60) {
-                    polezhan = true;
-                    food.pop();
-                    stamina.poll();
-                    mountains.add("Polezhan");
-                } else {
-                    food.pop();
-                    stamina.poll();
-                }
-                continue;
-            }
-            if (theSum >= 70) {
-                kamenitza = true;
-                food.pop();
-                stamina.poll();
-                mountains.add("Kamenitza");
-            } else {
-                food.pop();
-                stamina.poll();
-            }
-
-            if (kamenitza) {
+            food.pop();
+            stamina.poll();
+            if(mou.isEmpty()){
                 break;
             }
         }
