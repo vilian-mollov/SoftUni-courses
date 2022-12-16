@@ -32,8 +32,8 @@ public class SpotRepository implements Repository<Spot>{
     @Override
     public Spot byName(String name) {
         return spots.stream()
-                .filter(s -> s.getName()
-                .equals(name)).findFirst()
+                .filter(s -> s.getName().equals(name))
+                .findAny()
                 .orElse(null);
     }
 }

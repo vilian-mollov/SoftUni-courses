@@ -11,6 +11,7 @@ public abstract class BaseDiscoverer implements Discoverer {
     private String name;
     private double energy;
     private Museum museum;
+    private static final int DEFAULT_ENERGY_INSPECT = 15;
 
     public BaseDiscoverer(String name, double energy) {
         setName(name);
@@ -48,11 +49,7 @@ public abstract class BaseDiscoverer implements Discoverer {
 
     @Override
     public void dig() {
-
-        if (energy - 15 < 0) {
-            energy = 0;
-        }
-        energy -= 15;
+        this.energy = Math.max(0, this.energy - DEFAULT_ENERGY_INSPECT);
     }
 
     @Override
