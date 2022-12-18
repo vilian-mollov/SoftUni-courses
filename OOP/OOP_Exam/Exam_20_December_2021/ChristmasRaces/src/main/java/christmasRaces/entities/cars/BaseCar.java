@@ -11,18 +11,24 @@ public abstract class BaseCar implements Car{
     public BaseCar(String model, int horsePower, double cubicCentimeters) {
         setModel(model);
         setHorsePower(horsePower);
+        setCubicCentimeters(cubicCentimeters);
+    }
+
+    private void setCubicCentimeters(double cubicCentimeters){
         this.cubicCentimeters = cubicCentimeters;
     }
 
     private void setModel(String model) {
 
-        if(model == null || model.trim().isEmpty() || model.length() < 4){
+        if(model == null || model.trim().length() < 4){
             throw new IllegalArgumentException(String.format(INVALID_MODEL,model,4));
         }
         this.model = model;
     }
 
-    protected void setHorsePower(int horsePower){
+    protected abstract void checkHorsePower(int horsePower);
+    private void setHorsePower(int horsePower){
+        checkHorsePower(horsePower);
         this.horsePower = horsePower;
     }
 

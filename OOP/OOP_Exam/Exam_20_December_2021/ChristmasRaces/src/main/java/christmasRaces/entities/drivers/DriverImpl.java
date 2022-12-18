@@ -20,7 +20,7 @@ public class DriverImpl implements Driver{
     }
 
     private void setName(String name) {
-        if(name == null || name.trim().isEmpty() || name.length() < 5){
+        if(name == null || name.trim().length() < 5){
             throw new IllegalArgumentException(String.format(INVALID_NAME,name,5));
         }
         this.name = name;

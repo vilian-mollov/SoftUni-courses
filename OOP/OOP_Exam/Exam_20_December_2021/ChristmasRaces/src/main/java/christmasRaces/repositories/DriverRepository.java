@@ -3,35 +3,33 @@ package christmasRaces.repositories;
 import christmasRaces.entities.drivers.Driver;
 import christmasRaces.repositories.interfaces.Repository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 public class DriverRepository implements Repository<Driver> {
 
-    private Collection<Driver> models;
+    private Map<String,Driver> drivers;
 
     public DriverRepository() {
-        models = new ArrayList<>();
+        drivers = new LinkedHashMap<>();
     }
 
     @Override
     public Driver getByName(String name) {
-        return models.stream().filter(n -> n.getName().equals(name)).findAny().orElse(null);
+        return drivers.get(name);
     }
 
     @Override
     public Collection<Driver> getAll() {
-        return Collections.unmodifiableCollection(models);
+        return Collections.unmodifiableCollection(drivers.values());
     }
 
     @Override
     public void add(Driver model) {
-        models.add(model);
+        drivers.putIfAbsent(model.getName(),model);
     }
 
     @Override
     public boolean remove(Driver model) {
-        return models.remove(model);
+        return drivers.remove(model.getName()) != null;
     }
 }

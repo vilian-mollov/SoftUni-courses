@@ -3,35 +3,33 @@ package christmasRaces.repositories;
 import christmasRaces.entities.races.Race;
 import christmasRaces.repositories.interfaces.Repository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 public class RaceRepository implements Repository<Race> {
 
-    private Collection<Race> models;
+    private Map<String,Race> races;
 
     public RaceRepository() {
-        models = new ArrayList<>();
+        races = new LinkedHashMap<>();
     }
 
     @Override
     public Race getByName(String name) {
-        return models.stream().filter(r -> r.getName().equals(name)).findAny().orElse(null);
+        return races.get(name);
     }
 
     @Override
     public Collection<Race> getAll() {
-        return Collections.unmodifiableCollection(models);
+        return Collections.unmodifiableCollection(races.values());
     }
 
     @Override
     public void add(Race model) {
-        models.add(model);
+        races.putIfAbsent(model.getName(),model);
     }
 
     @Override
     public boolean remove(Race model) {
-        return models.remove(model);
+        return races.remove(model.getName()) != null;
     }
 }

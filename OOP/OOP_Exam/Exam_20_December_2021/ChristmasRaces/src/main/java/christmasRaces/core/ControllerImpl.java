@@ -138,6 +138,6 @@ public class ControllerImpl implements Controller {
         sb.append(String.format("Driver %s is third in %s race.", players.get(2).getName(), raceName));
 
         players.get(0).winRace();
-        return sb.toString();
+        return sb.toString().trim();
     }
 }
