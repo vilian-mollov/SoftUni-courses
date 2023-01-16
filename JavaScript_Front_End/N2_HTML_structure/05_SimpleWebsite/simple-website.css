@@ -5,7 +5,6 @@ body{
 }
 
 
-/* list-style:none; */
 ul{
     background-color: #444;
     text-align: center;
@@ -14,8 +13,6 @@ ul{
     list-style: none;
 }
 
-
-/* Line Height: 40px; */
 
 li{
     font-size: 24px;
@@ -32,8 +29,15 @@ a{
     color: #ffffff;
 }
 
-footer p{
+
+
+footer {
     background-color: #444;
+}
+
+
+
+footer p{
     color: #fff;
     text-align: center;
     padding: 10px;
