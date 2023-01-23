@@ -1,0 +1,37 @@
+/* TODO: style the html */
+/* <body>:
+oFont: Helvetica
+oGeneric Font: sans-serif
+oHeight of the line: 1.5
+oFont size: 18px
+oBackground color: white
+<article>:
+oMargins: 54px
+oPaddings: 36px
+oSet the border radius to 16px
+oText color: white
+oIndent text in the first line 40px
+oBackground color: rgb(51, 102, 153)
+<h1>:
+oFont: Georgia
+oGeneric Font: serif */
+
+body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+    background-color: white;
+}
+
+article {
+    margin: 54px;
+    padding: 36px;
+    border-radius: 16px;
+    color: white;
+    background-color: rgb(51, 102, 153);
+    text-indent: 40px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+}
