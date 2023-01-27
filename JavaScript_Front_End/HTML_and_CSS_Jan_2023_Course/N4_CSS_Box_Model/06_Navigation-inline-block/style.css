@@ -1,0 +1,22 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+header nav li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+header nav li a{
+    color: green;
+}
+
+header h1 {
+    display: inline-block;
+    text-align: left;
+    margin-right: 100px;
+}
+
+main {
+    border-top: 2px solid black;
+}
