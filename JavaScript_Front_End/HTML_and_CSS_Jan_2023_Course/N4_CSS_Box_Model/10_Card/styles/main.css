@@ -1,0 +1,134 @@
+body {
+    background-color: lightgray;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+
+/* --------------------
+    Card components
+-------------------- */
+
+.card {
+    width: 380px;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 0 0 calc(50% - 380px /2 );
+}
+
+.tumbnail {
+    width: 100%;
+    height: 420px;
+
+    /* to make it sqare 
+     aspect-ratio: 1/1;
+     */
+   
+
+    /* background-image: url(https://images.unsplash.com/photo-1674167526165-dbe4a01fc88b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.tumbnail__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding: 12px 35px;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.content__title {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.content__badge {
+    font-size: 14px;
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    background-color: #fff9ef;
+    color: #ffaf42;
+}
+
+.content__section-title {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+ul.content__projects {
+    border: 1px solid darkgray;
+    border-radius: 6px;
+    padding: 6px;
+    text-align: left;
+    font-size: 0px;
+}
+
+.project {
+    background-color: lightgray;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 16px;
+    /* margin-right: 4px; */
+}
+
+/* .project:last-child {
+    margin-right: 0px;
+} */
+
+.project:not(:last-child) {
+    margin-right: 4px;
+}
+
+.project:first-child {
+    margin-bottom: 4px;
+}
+
+
+.card:hover {
+    width: 385px;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 0 0 calc(50% - 385px /2 );
+    transition-delay: 20ms;
+    transition-duration: 150ms;
+}
+
+.content__title:hover {
+    cursor: pointer;
+}
+
+.project:hover {
+    cursor: pointer;
+    color: blueviolet;
+    transition-duration: 150ms;
+}
+
+.content__badge:hover {
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #fff9ef;
+    color: rgb(234, 129, 49);
+    transition-duration: 150ms;
+}
+
+
+
