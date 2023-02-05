@@ -1,0 +1,14 @@
+.wrapper {
+    position: relative;
+}
+
+
+#text {
+    display: inline-block;
+    position: absolute;
+    top: 60px;
+    left: 180px;
+    z-index: 2;
+    color: antiquewhite;
+    text-shadow: 1px 1px 20px black;
+}
