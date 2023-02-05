@@ -1,0 +1,53 @@
+.wrapper {
+  position: relative;
+  margin: 50px;
+  font-size: 30px;
+}
+
+.wrapper ul li {
+  display: inline-block;
+  /* border: 2px solid black;
+    border-radius: 100%; */
+}
+
+.wrapper ul li a {
+  /* border: 2px solid black; */
+  padding: 13px;
+  border-radius: 50%;
+  background-color: lightgray;
+  color: black;
+}
+
+#fb:hover {
+  color: #4267b2;
+}
+
+#tw:hover {
+  color: #389ed4;
+}
+
+#lkin:hover {
+  color: #389ed4;
+}
+
+#gm:hover {
+  color: #f8ae1b;
+}
+
+#inst:hover {
+    color: rgb(64, 93, 230);
+  /* background: rgb(64, 93, 230);
+  background: radial-gradient(
+    circle,
+    rgba(64, 93, 230, 1) 0%,
+    rgba(91, 81, 216, 1) 16%,
+    rgba(131, 58, 180, 1) 33%,
+    rgba(193, 53, 132, 1) 59%,
+    rgba(225, 48, 108, 1) 69%,
+    rgba(253, 29, 29, 0.768451519536903) 78%,
+    rgba(245, 96, 64, 1) 84%,
+    rgba(247, 119, 55, 0.8465991316931982) 92%,
+    rgba(252, 175, 69, 0.49059334298118673) 97%,
+    rgba(255, 220, 128, 0.3646888567293777) 100%
+  ); */
+}
