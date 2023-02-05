@@ -1,0 +1,19 @@
+div.wrapper {
+    margin: 70px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+}
+
+#cupp {
+    position: absolute;
+    top: auto;
+    left: auto;
+}
+
+#new {
+    position: absolute;
+    top: -80px;
+    left: 220px;
+    z-index: 1000;
+}
