@@ -1,0 +1,45 @@
+main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+main div.viewport1 {
+  height: 50%;
+  background: rgb(121, 113, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 113, 255, 1) 0%,
+    rgba(2, 198, 236, 1) 44%,
+    rgba(78, 255, 214, 1) 100%
+  );
+}
+main div.viewport1 img {
+  width: 400px;
+  aspect-ratio: 1.4/1;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+
+main div.viewport2 {
+  height: 50%;
+  background: rgb(184, 33, 137);
+  background: linear-gradient(
+    90deg,
+    rgba(184, 33, 137, 1) 0%,
+    rgba(238, 48, 48, 1) 35%,
+    rgba(251, 128, 40, 1) 77%,
+    rgba(231, 166, 24, 1) 100%
+  );
+}
+
+main div.viewport2 img {
+  width: 200px;
+  aspect-ratio: 1/1.5;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
