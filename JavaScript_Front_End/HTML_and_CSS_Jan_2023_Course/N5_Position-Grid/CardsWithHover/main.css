@@ -1,0 +1,88 @@
+body {
+  background-color: lightgray;
+}
+
+/* Woman card ---------------------------------------- */
+.card {
+  display: inline-block;
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px 0px 0px 15px;
+}
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+}
+
+.card .content {
+  position: absolute;
+  bottom: -150px;
+  left: 0px;
+  z-index: 10;
+  color: white;
+  padding: 0px 4px 7px 4px;
+  transition: 300ms;
+}
+
+.card:hover .content {
+  bottom: 0px;
+}
+
+/* News card  Obammmnaaa------------------------------------------------- */
+
+.newsCard {
+  display: inline-block;
+  width: 500px;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 40px;
+  /* margin: 50px 20px 20px 20px; */
+}
+
+.newsCard img {
+  aspect-ratio: 1.7/1.2;
+}
+
+.newsCard .news__content {
+  position: absolute;
+  left: 0px;
+  bottom: -98px;
+  color: white;
+  padding: 0px 4px 7px 4px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8925831202046036) 0%,
+    rgba(13, 4, 145, 0.9002557544757033) 19%,
+    rgba(33, 24, 181, 0.6956521739130435) 42%,
+    rgba(73, 64, 228, 0.3913043478260869) 59%
+  );
+  transition: 300ms;
+}
+
+.newsCard .news__content h4 {
+  display: inline-block;
+}
+
+.newsCard .news__content button {
+  width: 59px;
+  height: 15px;
+  font-size: 12px;
+  line-height: 1.5px;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+
+.newsCard:hover .news__content {
+    bottom: 0px;
+}
