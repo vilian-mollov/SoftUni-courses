@@ -1,0 +1,107 @@
+body {
+  background-color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px;
+}
+
+header {
+    position: relative;
+}
+
+header h1 {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  top: auto;
+  left: auto;
+}
+
+header ul {
+  display: inline-block;
+  position: absolute;
+  width: 40%;
+  top: 10px;
+  right: 10px;
+}
+
+header ul li {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #009a00;
+    font-weight: 500;
+}
+
+hr {
+    border: 2px solid gray;
+}
+
+/* Wrapper ------------------------------ */
+
+.wrapper {
+    position: relative;
+}
+
+
+/* Main ---------------------------------------------------------- */
+
+main {
+    line-height: 1.5;
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    padding-bottom: 50px;
+}
+
+main h2{
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#escalator{
+    float: right;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+#animal {
+    float: left;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+}
+/* Aside ----------------------------------------------------- */
+
+
+aside {
+    display: inline-block;
+    width: calc(9% - 100px);
+    position: absolute;
+    top: 0px;
+    right: 20%;
+}
+
+aside ul li {
+    color: #009a00;
+}
+
+aside ul li i {
+    color: black;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+aside ul li {
+  word-spacing: 12px;
+}
+
+
+
+
+
