@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+header ul {
+    display: flex;
+    align-self: flex-start;
+}
+
+header ul li a{
+    color: green;
+    padding-right: 7px;
+}
+
+main {
+    display: inline-flex;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+aside {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+
+hr {
+    width: 100%;
+    border: 2px solid black;
+}
+
+aside ul li  {
+    color: green;
+}
+
+aside ul li i {
+    color: black;
+}
+
+#escalator {
+    float: right;
+}
+
+#animal {
+    float: left;
+    display: inline;
+}
+
+h2 {
+    width: 100%;
+}
