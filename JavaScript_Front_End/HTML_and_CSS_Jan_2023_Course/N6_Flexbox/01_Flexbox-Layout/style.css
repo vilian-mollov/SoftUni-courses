@@ -1,0 +1,52 @@
+/* Create header, main, aside and footer elements
+<body>
+obackground color - #EEE;
+opadding - 5rem;
+odisplay - flex;
+oflex-wrap - wrap;
+Each element (<header>, <main>, <aside>, <footer>) must have:
+opadding - 2rem;
+obackground color - #FFF;
+oborder-radius - 0.4rem;
+ocolor - #000;
+<header> and <footer>
+oflex-basics - 100%;
+<main>
+oflex - 8 1 40rem;
+<aside>
+flex - 2 1 20rem */
+
+body {
+    background-color: #EEE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.item {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    color: #000;
+    margin: 10px 0px 10px 0px;
+}
+
+header.item {
+    flex-basis: 100%;
+}
+
+main.item {
+    flex: 8 1 40rem;
+    margin-right: 20px;
+}
+
+aside.item {
+    flex: 2 1 20rem;
+}
+
+
+footer.item {
+    flex-basis: 100%;
+}
+
