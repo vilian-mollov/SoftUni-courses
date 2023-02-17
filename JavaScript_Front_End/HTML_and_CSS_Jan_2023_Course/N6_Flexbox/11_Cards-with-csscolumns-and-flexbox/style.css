@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.cards-layout {
+    width: 55vw;
+    
+}
+
+div.cards-layout .card {
+    width: 210px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #33343b;
+}
+
+/* Masonry ------------------- */
+
+div.cards-layout.masonry {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 210px);
+}
+
+div.cards-layout.masonry h2 {
+    width: 100%;
+}
+
+/* div.cards-layout.masonry .card {
+    content: counter(masonry);
+    counter-increment: masonry;
+    position: absolute;
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+} */
+
+/* Flex ------------------  */
+
+div.cards-layout.flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 8px;
+}
+
+div.cards-layout.flex h2 {
+    width: 100%;
+}
+
+.flex section {
+    padding: 20px;
+}
+
+.flex footer {
+    padding: 20px;
+}
