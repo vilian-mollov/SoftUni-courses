@@ -1,0 +1,218 @@
+/* 
+    brown - #370511;
+
+*/
+
+/* General */
+html {
+    font-family: "Poppins";
+    font-size: 18px;
+}
+
+/* Header ------------------------ */
+
+.header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 50px;
+
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.travel_span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.explore {
+    color: #fff;
+    background-color: #370511;
+    border-radius: 50px;
+    padding: 4px 24px;
+}
+
+/* Sections ---------------- */
+
+/* Hero section ------------------------- */
+.hero_section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+}
+
+.landing_photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero_box_desc {
+    width: 550px;
+    height: 300px;
+
+
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    padding: 15px;
+}
+
+.hero_box_desc h1 {
+    padding-bottom: 8px;
+    font-size: 46px;
+}
+
+.hero_box_desc h3 {
+    padding-bottom: 26px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.last_p {
+    padding-bottom: 26px;
+
+}
+
+.btn {
+    color: #fff;
+    font-size: 16px;
+    background-color: #370511;
+    border-radius: 50px;
+    padding: 4px 24px;
+
+    cursor: pointer;
+}
+
+/* famous_places -------------------------------------- */
+
+.famous_places {
+    width: 100%;
+    height: 140vh;
+}
+
+.txt {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.txt h2{
+    font-size: 36px;
+}
+
+.txt h4{
+    color: gray;
+}
+
+.cont {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 55px;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+}
+
+.img_cont {
+    width: 350px;
+    height: 250px;
+}
+
+.grid_container .item {
+    width: 350px;
+    height: 550px;
+
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.grid_container .item img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+
+.item h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+.btn_pics {
+    align-self: center;
+    border: 1px solid darkgray;
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin-top: 25px;
+    margin-left: 85px;
+
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+
+/* Footer ------------------- */
+
+footer {
+    color: #fff;
+    width: 100%;
+    height: 25vh;
+    background-color: black;
+}
+
+.footer_grid_container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+}
+
+.tour li{
+    padding-bottom: 6px;
+}
+.about li{
+    padding-bottom: 6px;
+}
+
+.footer_list {
+    font-size: 22px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
