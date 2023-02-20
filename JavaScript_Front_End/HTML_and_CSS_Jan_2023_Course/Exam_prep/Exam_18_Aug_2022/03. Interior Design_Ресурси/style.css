@@ -1,0 +1,131 @@
+/* document ---------------------*/
+html {
+}
+
+body {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    
+}
+
+main.main {
+    width: 80vw;
+
+}
+
+/* Background ------------------------------- */
+
+.bg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+body .bg {
+  position: absolute;
+  top: 0px;
+  left: 70px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero boxes ------------------------ */
+
+.hero_left_box {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  /* border: 1px solid black; */
+  background-color: transparent;
+  border-radius: 2px;
+  box-shadow: 0 0 8px 2px gray;
+  z-index: 5;
+
+  width: 290px;
+  height: 210px;
+}
+
+.hero_left_box div {
+  display: inline-block;
+  border-bottom: 2px solid white;
+  margin-left: 10px;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.hero_left_box h2 {
+  /* padding-left: 10px; */
+  font-size: 44px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.hero_left_box h3 {
+  padding-left: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.hero_right_box {
+  position: absolute;
+  top: 260px;
+  right: 40px;
+
+  box-shadow: 0 0 7px 5px gray;
+  background: rgb(186, 177, 173);
+  background: linear-gradient(
+    117deg,
+    rgba(186, 177, 173, 1) 0%,
+    rgba(203, 200, 197, 1) 50%,
+    rgba(231, 227, 226, 1) 98%
+  );
+  width: 360px;
+  height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+}
+
+.hero_right_box p {
+  font-size: 20px;
+  text-align: right;
+  text-shadow: 2px 2px gray;
+  color: #fff;
+}
+
+p.icon {
+  color: #6f6a67;
+}
+
+/* Info ---------------------------------- */
+
+div.info {
+  position: absolute;
+  background-color: #f2f0f3;
+  top: 90vh;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Side bar-------------------------------- */
+
+.side_bar {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #bab1ad;
+  width: 500px;
+  height: 100vh;
+}
