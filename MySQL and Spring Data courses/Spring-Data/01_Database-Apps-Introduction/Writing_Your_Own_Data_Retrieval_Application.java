@@ -16,17 +16,17 @@ public class Writing_Your_Own_Data_Retrieval_Application {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "*********");
+        properties.setProperty("password", "**********");
 
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/diablo", properties);
 
         PreparedStatement preparedStatement =
                 connection
                         .prepareStatement("SELECT count(*) AS games, user_name, first_name, last_name " +
-                                              "FROM users_games " +
-                                              "join users on user_id = users.id " +
-                                              "where user_name = ? " +
-                                              "group by users.id;");
+                                "FROM users_games " +
+                                "join users on user_id = users.id " +
+                                "where user_name = ? " +
+                                "group by users.id;");
 
 
         System.out.print("Enter username: ");
@@ -37,12 +37,12 @@ public class Writing_Your_Own_Data_Retrieval_Application {
 
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        boolean hasRecord = false;
+        if(!resultSet.next()){
+            System.out.println("No such user exists");
+            return;
+        }
 
-
-        while (resultSet.next()) {
-
-            hasRecord = true;
+        do {
 
             System.out.println("User: " + resultSet.getString("user_name") + "\n"
                     + resultSet.getString("first_name") + " " + resultSet.getString("last_name")
@@ -50,15 +50,7 @@ public class Writing_Your_Own_Data_Retrieval_Application {
 
             System.out.println();
 
-        }
-
-
-        if(!hasRecord) {
-
-            System.out.println("No such user exists");
-
-        }
-
+        } while (resultSet.next());
 
     }
 }
